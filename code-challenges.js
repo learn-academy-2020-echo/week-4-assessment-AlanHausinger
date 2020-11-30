@@ -6,7 +6,35 @@ var collections = ["purple", "blue", "green", "yellow", "pink"]
 // Expected output example1 (can be a different order): ["yellow", "blue", "pink", "green"]
 // Expected output example2 (can be a different order): ["blue", "green", "pink"]
 // Expected output example3 (can be a different order): ["pink", "green"]
+// Very very very confusing! I started by creating a funcion that takes an array as an argument.
+const shuffle = (array) => {
+    //if array is empty
+// Then I set my if statement when my array is empty, you can set it equal to 0, [],or ""
+    if (array=== 0) {
+        return "The array is empty."
 
+// Start by using .shift()
+    } else {
+        array.shift()
+// Set a basic for lop,
+        for (let i=0; i<array.length; i++) {
+// create a local variable that will find a random index and suffle my array.
+// Math.floor(Math.random()) will return a random integer from my array.
+                randIndex = Math.floor(Math.random()*array.length)
+// switch the position of value at random index with the value at i
+// create a new local variable that will hold my array and randInex
+                temp = array[randIndex]
+                array[randIndex] = array[i]
+                array[i] = temp
+            }
+        return array
+    }
+}
+console.log(shuffle(collections))
+console.log(shuffle(collections))
+console.log(shuffle(collections))
+console.log(shuffle(collections))
+console.log(shuffle(collections))
 
 
 
@@ -18,6 +46,12 @@ var cubeAndSum1 = [2, 3, 4]
 var cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
+let sumedCubes = [];
+   for ( var i = 0; i < sumedCubes.length;i++) {
+      sumedCubes[i] = sumedCubes[i]*sumedCubes[i]*sumedCubes[i];
+   }
+
+console.log(sumedCubes(cubeAndSum1));
 
 
 
@@ -29,6 +63,14 @@ var nums1 = [3, 56, 90, -8, 0, 23, 6]
 var nums2 = [109, 5, 9, -59, 8, 24]
 // Expected output: [-59, 109]
 
+const myFunction = (array) => {
+    let max = (Math.min(...array))
+    let min = (Math.max(...array))
+    return [max,min]
+}
+
+console.log(myFunction(nums1))
+console.log(myFunction(nums2))
 
 
 
@@ -40,6 +82,17 @@ var testString1 = "albatross"
 var testString2 = "jabberwocky"
 // Expected output: "jAbBeRwOcKy"
 
+function firstLetterUppercase (input) {
+  var res = "";
+  for (i=0; i < input.length; i++) {
+     res += i % 2 == 0 ? input.charAt(i).toUpperCase() : input.charAt(i);
+  }
+  return res;
+}
+
+console.log(firstLetterUppercase(testString1));
+console.log(firstLetterUppercase(testString2));
+
 
 
 
@@ -48,4 +101,16 @@ var testString2 = "jabberwocky"
 
 var arr1 = [3, 7, 10, 5, 4, 3, 3]
 var arr2 = [7, 8, 2, 3, 1, 5, 4]
+
+const noDupes = (arr1, arr2) => {
+    // lets create a local variable that will hold our new arrat
+    let singleArray = new Set ([...arr1,...arr2])
+    return [...singleArray]
+}
+console.log(noDupes(arr1,arr2));
+
+
+
+
+
 // Expected output: [3, 7, 10, 5, 4, 8, 2, 1]

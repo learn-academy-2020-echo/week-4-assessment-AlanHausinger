@@ -3,6 +3,7 @@
 
 # --------------------1) Create a method that takes in an array and returns an array with only odd numbers sorted from least to greatest. Use the test variables provided.
 
+
 full_arr1 = [4, 9, 0, '7', 8, true, 'hey', 7, 199, -9, false, 'hola']
 # Expected output: [-9, 7, 9, 199]
 full_arr2 = ['hello', 7, 23, -823, false, 78, nil, '67', 6, 'Number']
